@@ -2,11 +2,25 @@
     {{render 'components/index-menubar'}}
     <div class='content darken'>
         <section id='login-panel'>
-            <div class='header'>Log In</div>
+            <div class='header'>Log in</div>
             <div class='social'>
                 <div class='signin' id='facebook-login-button'>
-                    Log In with Facebook
+                    <i class='social-icon fa fa-facebook-square'></i>Log in with Facebook
                 </div>
+            </div>
+            <div class='separator'>Or</div>
+            <form id='login-form'>
+                <input type='email' placeholder='Email Address'>
+                <input type='password' placeholder='Password'>
+                <li class="field check-round slide">
+                    <input type="checkbox" name="check-slide" id="check-slide" />
+                    <label for="check-slide">Keep me logged in  <span></span></label>
+                </li>
+                <button type='submit'><i class='social-icon fa fa-user'></i>Log in with Account</button>
+            </form>
+            <div class='legal'>
+            <p>By logging in, you agree to our {{#link-to 'index'}}Terms of Service{{/link-to}}</p>
+            <p>{{#link-to 'index'}}Forgot your Password?{{/link-to}}</p>
             </div>
         </section>
     </div>

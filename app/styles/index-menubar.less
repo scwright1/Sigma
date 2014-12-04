@@ -19,10 +19,12 @@
         >a {
             color: @color-white;
             transition: color 0.4s ease;
+            -webkit-transition: color 0.4s ease;
             text-decoration: none;
             &:hover {
                 color: darken(@color-blue, 10%);
                 transition: color 0.4s ease;
+                -webkit-transition: color 0.4s ease;
             }
         }
     }
@@ -36,19 +38,23 @@
             color: darken(@color-white, 10%);
             text-decoration: none;
             transition: color 0.4s ease;
+            -webkit-transition: color 0.4s ease;
             &:hover {
                 color: darken(@color-blue, 20%);
                 transition: color 0.4s ease;
+                -webkit-transition: color 0.4s ease;
             }
         }
         >a.border {
             border: 1px solid darken(@color-white, 10%);
             border-radius: 4px;
             transition: color 0.4s ease, border-color 0.4s ease;
+            -webkit-transition: color 0.4s ease, border-color 0.4s ease;
             &:hover {
                 color: darken(@color-blue, 20%);
                 border-color: darken(@color-blue, 20%);
                 transition: color 0.4s ease, border-color 0.4s ease;
+                -webkit-transition: color 0.4s ease, border-color 0.4s ease;
             }
         }
     }
