@@ -3,6 +3,11 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'banbury',
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'font-src': "'self' data: fonts.gstatic.com",
+      'style-src': "'self' 'unsafe-inline' fonts.gstatic.com maxcdn.bootstrapcdn.com fonts.googleapis.com",
+    },
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
