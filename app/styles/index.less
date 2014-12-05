@@ -22,10 +22,7 @@
         position: absolute;
         >.fire {
             top: 50%;
-            left: 50%;
             height: 26px;
-            width: 504px;
-            margin-left: -252px;
             margin-top: -13px;
             position: absolute;
             >form {
@@ -35,7 +32,6 @@
                             border-radius: 0;
                             border: 2px solid @color-white;
                             background: @color-white;
-                            width: 400px;
                         }
                     }
                     >button {
@@ -43,7 +39,80 @@
                         background: darken(@color-blue, 20%);
                         color: @color-white;
                         border: 1px solid darken(@color-blue, 20%);
-                        width: 100px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and(max-width: 399px) {
+    #grab {
+        >.darken {
+            >.fire {
+                width: 100%;
+                text-align: center;
+                >form {
+                    >.form-group {
+                        >.input-group {
+                            width: 100%;
+                            >input {
+                                margin-bottom: 10px;
+                            }
+                        }
+                        >button {
+                            width: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and(min-width: 400px) and (max-width: 767px) {
+    #grab {
+        >.darken {
+            >.fire {
+                left: 50%;
+                width: 504px;
+                margin-left: -252px;
+                text-align: center;
+                >form {
+                    >.form-group {
+                        >.input-group {
+                            width: 100%;
+                            >input {
+                                margin-bottom: 10px;
+                            }
+                        }
+                        >button {
+                            width: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and(min-width: 768px) {
+    #grab {
+        >.darken {
+            >.fire {
+                left: 50%;
+                width: 504px;
+                margin-left: -252px;
+                >form {
+                    >.form-group {
+                        >.input-group {
+                            >input {
+                                width: 400px;
+                            }
+                        }
+                        >button {
+                            width: 100px;
+                        }
                     }
                 }
             }
