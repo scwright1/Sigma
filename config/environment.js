@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'banbury',
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'font-src': "'self' data: fonts.gstatic.com",
+      'font-src': "'self' data: fonts.gstatic.com maxcdn.bootstrapcdn.com",
       'style-src': "'self' 'unsafe-inline' fonts.gstatic.com maxcdn.bootstrapcdn.com fonts.googleapis.com",
     },
     environment: environment,

@@ -1,11 +1,8 @@
 #login-panel {
-    top: 50%;
     left: 50%;
     position: absolute;
     width: 300px;
     margin-left: -150px;
-    height: 550px;
-    margin-top: -275px;
     text-align: center;
     >.header {
         margin: 20px;
@@ -35,10 +32,6 @@
                 }
             }
         }
-    }
-    >.separator {
-        margin-top: 30px;
-        margin-bottom: 20px;
     }
     >#login-form {
         >input[type='email'], input[type='password'] {
@@ -166,6 +159,31 @@
                     -webkit-transition: color 0.4s ease;
                 }
             }
+        }
+    }
+}
+
+@media all and(min-height: 600px) {
+    #login-panel {
+        top: 50%;
+        height: 550px;
+        margin-top: -275px;
+        >.separator {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media all and(max-height: 599px) {
+    #login-panel {
+        margin-top: 26px;
+        >.header {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        >.separator {
+            margin: 10px;
         }
     }
 }
