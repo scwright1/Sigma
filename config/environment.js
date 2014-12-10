@@ -4,9 +4,11 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'banbury',
     contentSecurityPolicy: {
-      'default-src': "'none'",
+      'default-src': "static.ak.facebook.com s-static.ak.facebook.com www.facebook.com",
       'font-src': "'self' data: fonts.gstatic.com maxcdn.bootstrapcdn.com",
       'style-src': "'self' 'unsafe-inline' fonts.gstatic.com maxcdn.bootstrapcdn.com fonts.googleapis.com",
+      'report-uri': "static.ak.facebook.com s-static.ak.facebook.com www.facebook.com",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' connect.facebook.net"
     },
     environment: environment,
     baseURL: '/',

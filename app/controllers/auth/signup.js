@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 var Signup = Ember.ObjectController.extend({
-    content: {},
+    model: {},
     actions: {
         signup: function() {
         }

@@ -5,7 +5,6 @@ var Signup = Ember.View.extend({
         if(this.get('controller.confirm') || this.get('controller.password')) {
             //color the border of the confirm element if the passwords don't match
             if(this.get('controller.confirm') !== this.get('controller.password')) {
-                console.log('no');
                 this.$('section > div > section > form > .confirm').addClass('invalid');
             } else {
                 this.$('section > div > section > form > .confirm').removeClass('invalid');
