@@ -1,0 +1,23 @@
+<section id='grab'>
+    {{render 'components/index-menubar'}}
+    <div class='content darken'>
+        <section id='auth-panel'>
+            <div class='header'>Sign up</div>
+            <div class='social'>
+                <div class='signin' id='facebook-login-button'>
+                    <i class='social-icon fa fa-facebook-square'></i>Sign up with Facebook
+                </div>
+            </div>
+            <div class='separator'>Or</div>
+            <form id='login-form'>
+                {{input value=email type='email' placeholder='Email Address'}}
+                {{input value=password type='password' placeholder='Password'}}
+                {{input value=confirm type='password' placeholder='Confirm Password'}}
+                <button type='submit'><i class='social-icon fa fa-user'></i>Sign up with Email</button>
+            </form>
+            <div class='legal'>
+            <p>By registering, you agree to our {{#link-to 'index'}}Terms of Service{{/link-to}}</p>
+            </div>
+        </section>
+    </div>
+</section>
