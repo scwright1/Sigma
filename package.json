@@ -32,5 +32,8 @@
     "express": "^4.8.5",
     "glob": "^4.0.5",
     "ember-cli-less": "~1.0.5"
+  },
+  "dependencies": {
+    "torii": "~0.2.2"
   }
 }

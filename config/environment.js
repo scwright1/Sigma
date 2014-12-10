@@ -10,6 +10,13 @@ module.exports = function(environment) {
       'report-uri': "static.ak.facebook.com s-static.ak.facebook.com www.facebook.com",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval' connect.facebook.net"
     },
+    torii: {
+      providers: {
+        'facebook-connect': {
+          appId: '1604699376417639'
+        }
+      }
+    },
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
