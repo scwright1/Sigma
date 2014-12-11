@@ -8,7 +8,8 @@ module.exports = function(environment) {
       'font-src': "'self' data: fonts.gstatic.com maxcdn.bootstrapcdn.com",
       'style-src': "'self' 'unsafe-inline' fonts.gstatic.com maxcdn.bootstrapcdn.com fonts.googleapis.com",
       'report-uri': "static.ak.facebook.com s-static.ak.facebook.com www.facebook.com",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' connect.facebook.net"
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' connect.facebook.net graph.facebook.com",
+      'img-src': "'self' www.facebook.com"
     },
     torii: {
       providers: {

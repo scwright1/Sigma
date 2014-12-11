@@ -1,11 +1,16 @@
 import Ember from 'ember';
-import config from '../../config/environment';
 
 var Signup = Ember.Route.extend({
     actions: {
         facebookSignup: function() {
-            this.get('torii').open('facebook-connect').then(function(authorization) {
-                console.log(authorization);
+            var fbMW = this.get('controller').get('fbMW');
+            var user = Ember.RSVP.defer();
+            //logic chain: open facebook connect and get the accessToken, then get the userdata based on that token, then resolve the user promise, then save the user data out to the database
+            this.get('torii').open('facebook-connect').then(fbMW.send('getUserData', user)).then(function() {
+                return user.promise;
+            }).then(function(data) {
+                //save user out to database
+                console.log(data);
             });
         }
     }
