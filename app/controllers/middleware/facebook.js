@@ -2,13 +2,12 @@ import Ember from 'ember';
 
 var Facebook = Ember.ObjectController.extend({
     actions: {
-        getUserData: function(promise) {
-            var api = Ember.RSVP.denodeify(FB.api.bind(FB));
-            api('/me').then(function(){}, function(data) {
-                if(!data || data.error) {
-                    promise.reject('Failed to fetch user');
+        getUser: function(promise) {
+            FB.api('/me', function(response) {
+                if(!response || response.error) {
+                    promise.reject('Failed to lookup user');
                 } else {
-                    promise.resolve(data);
+                    promise.resolve(response);
                 }
             });
         }

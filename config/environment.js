@@ -12,6 +12,7 @@ module.exports = function(environment) {
       'img-src': "'self' www.facebook.com"
     },
     torii: {
+      sessionServiceName: 'session',
       providers: {
         'facebook-connect': {
           appId: '1604699376417639'
