@@ -14,15 +14,15 @@ var Signup = Ember.Route.extend({
                         self.transitionTo('500');
                     } else {
                         //generate user payload
-                        console.log(data);
-                        self.get('store').createRecord('account', {
+                        var account = self.get('store').createRecord('account', {
                             provider: 'facebook',
                             provider_id: data.id,
                             email: data.email,
                             fname: data.first_name,
                             lname: data.last_name
-                        }).save().then(self.transitionTo('me')).catch(function() {
-                            self.transitionTo('500');
+                        });
+                        account.save().then(function(data) {
+                            console.log(data);
                         });
                     }
                 });
