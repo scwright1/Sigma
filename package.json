@@ -33,9 +33,7 @@
     "glob": "^4.0.5",
     "ember-cli-less": "~1.0.5",
     "rsvp-tools": "~0.1.0",
-    "torii": "~0.2.2"
+    "ember-cli-simple-auth": "~0.7.2"
   },
-  "dependencies": {
-    "torii": "~0.2.2"
-  }
+  "dependencies": {}
 }

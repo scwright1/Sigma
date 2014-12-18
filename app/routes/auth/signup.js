@@ -3,6 +3,14 @@ import Ember from 'ember';
 var Signup = Ember.Route.extend({
     actions: {
         facebookSignup: function() {
+            function resolve(response) {
+                console.log('Data:');
+                console.log(response);
+            }
+
+            function reject(reason) {
+                console.log('Error:', reason);
+            }
             //logic chain: open facebook connect and get the accessToken, then get the userdata based on that token, then resolve the user promise, then save the user data out to the database
             var self = this;
             var user = Ember.RSVP.defer();
@@ -14,16 +22,13 @@ var Signup = Ember.Route.extend({
                         self.transitionTo('500');
                     } else {
                         //generate user payload
-                        var account = self.get('store').createRecord('account', {
+                        self.get('store').createRecord('account', {
                             provider: 'facebook',
                             provider_id: data.id,
                             email: data.email,
                             fname: data.first_name,
                             lname: data.last_name
-                        });
-                        account.save().then(function(data) {
-                            console.log(data);
-                        });
+                        }).save().then(resolve, reject);
                     }
                 });
             });

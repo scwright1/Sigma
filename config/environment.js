@@ -3,22 +3,6 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'banbury',
-    contentSecurityPolicy: {
-      'default-src': "static.ak.facebook.com s-static.ak.facebook.com www.facebook.com",
-      'font-src': "'self' data: fonts.gstatic.com maxcdn.bootstrapcdn.com",
-      'style-src': "'self' 'unsafe-inline' fonts.gstatic.com maxcdn.bootstrapcdn.com fonts.googleapis.com",
-      'report-uri': "static.ak.facebook.com s-static.ak.facebook.com www.facebook.com",
-      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' connect.facebook.net graph.facebook.com",
-      'img-src': "'self' www.facebook.com"
-    },
-    torii: {
-      sessionServiceName: 'session',
-      providers: {
-        'facebook-connect': {
-          appId: '1604699376417639'
-        }
-      }
-    },
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -41,22 +25,37 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV['simple-auth'] = {
+      authenticationRoute: 'auth.login'
+    }
+    ENV['contentSecurityPolicy'] = {
+      "style-src": "'self' 'unsafe-inline' maxcdn.bootstrapcdn.com fonts.googleapis.com",
+      "font-src": "'self' 'unsafe-inline' fonts.gstatic.com"
+    }
+
   }
 
   if (environment === 'test') {
     // Testem prefers this...
     ENV.baseURL = '/';
-    ENV.locationType = 'none';
+    ENV.locationType = 'auto';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    ENV['simple-auth'] = {
+      store: 'simple-auth-session-store:ephemeral'
+    };
   }
 
   if (environment === 'production') {
-
+    ENV['simple-auth'] = {
+      authenticationRoute: 'auth.login'
+    }
   }
 
   return ENV;
