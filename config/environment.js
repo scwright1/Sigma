@@ -6,6 +6,14 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    torii: {
+      providers: {
+        'facebook-connect': {
+          appId: '1604699376417639',
+          scope: 'email'
+        }
+      }
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -31,7 +39,11 @@ module.exports = function(environment) {
     }
     ENV['contentSecurityPolicy'] = {
       "style-src": "'self' 'unsafe-inline' maxcdn.bootstrapcdn.com fonts.googleapis.com",
-      "font-src": "'self' 'unsafe-inline' fonts.gstatic.com"
+      "font-src": "'self' 'unsafe-inline' fonts.gstatic.com",
+      "frame-src": "'self' static.ak.facebook.com s-static.ak.facebook.com https://www.facebook.com",
+      "script-src": "'self' 'unsafe-eval' localhost:35729 0.0.0.0:35729 connect.facebook.net graph.facebook.com",
+      "img-src": "'self' https://www.facebook.com",
+      "report-uri": "http://localhost:4200"
     }
 
   }
