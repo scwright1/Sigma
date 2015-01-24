@@ -6,6 +6,7 @@ var Signup = Ember.Route.extend({
             function resolve(response) {
                 console.log('Data:');
                 console.log(response);
+                this.transitionTo('me');
             }
 
             function reject(reason) {
