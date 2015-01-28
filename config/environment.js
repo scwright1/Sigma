@@ -8,9 +8,9 @@ module.exports = function(environment) {
     locationType: 'auto',
     torii: {
       providers: {
-        'facebook-connect': {
-          appId: '1604699376417639',
-          scope: 'email'
+        'facebook-oauth2': {
+          apiKey: '1604699376417639',
+          redirectUri: 'http://localhost:4200'
         }
       }
     },
@@ -34,9 +34,6 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-    ENV['simple-auth'] = {
-      authenticationRoute: 'auth.login'
-    }
     ENV['contentSecurityPolicy'] = {
       "style-src": "'self' 'unsafe-inline' maxcdn.bootstrapcdn.com fonts.googleapis.com",
       "font-src": "'self' 'unsafe-inline' fonts.gstatic.com",
@@ -45,7 +42,9 @@ module.exports = function(environment) {
       "img-src": "'self' https://www.facebook.com",
       "report-uri": "http://localhost:4200"
     }
-
+    ENV['simple-auth'] = {
+      authenticationRoute: 'auth.login'
+    };
   }
 
   if (environment === 'test') {
@@ -58,16 +57,12 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
-
-    ENV['simple-auth'] = {
-      store: 'simple-auth-session-store:ephemeral'
-    };
   }
 
   if (environment === 'production') {
     ENV['simple-auth'] = {
       authenticationRoute: 'auth.login'
-    }
+    };
   }
 
   return ENV;
