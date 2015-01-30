@@ -14,8 +14,9 @@ var Signup = Ember.ObjectController.extend(LoginControllerMixin, {
                     url: '/api/accounts',
                     data: {'token': sessionCode,'provider':'facebook'},
                     type: 'post'
-                }).then(function() {
-                    _this.transitionToRoute('/');
+                }).done(function(data) {
+                    console.log(data);
+                    _this.transitionToRoute('/me');
                 });
             }, function(error) {
                 alert('ERROR: ' + error);
@@ -25,6 +26,3 @@ var Signup = Ember.ObjectController.extend(LoginControllerMixin, {
 });
 
 export default Signup;
-
-//issue with the redirect_uri, needs to be corrected in the code -> access_token conversion
-//https://www.facebook.com/dialog/oauth?response_type=code&client_id=1604699376417639&redirect_uri=http%3A%2F%2Flocalhost%3A4200&display=popup&scope=email
