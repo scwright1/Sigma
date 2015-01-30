@@ -10,7 +10,7 @@ module.exports = function(environment) {
       providers: {
         'facebook-oauth2': {
           apiKey: '1604699376417639',
-          redirectUri: 'http://localhost:4200'
+          redirectUri: 'http://localhost:4200/'
         }
       }
     },
