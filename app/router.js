@@ -12,7 +12,6 @@ Router.map(function() {
     });
     this.route('me');
     this.route('500');
-    this.route('login');
 });
 
 export default Router;

@@ -11,13 +11,21 @@
 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/banbury.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,100,200,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700,400italic' rel='stylesheet' type='text/css'>
+    <!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient {
+           filter: none;
+        }
+      </style>
+    <![endif]-->
   </head>
   <body>
     {{content-for 'body'}}
     <script src="assets/vendor.js"></script>
     <script src="assets/banbury.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   </body>
 </html>

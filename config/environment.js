@@ -9,8 +9,7 @@ module.exports = function(environment) {
     torii: {
       providers: {
         'facebook-oauth2': {
-          apiKey: '1604699376417639',
-          redirectUri: 'http://localhost:4200/'
+          apiKey: '1604699376417639'
         }
       }
     },
@@ -38,7 +37,7 @@ module.exports = function(environment) {
       "style-src": "'self' 'unsafe-inline' maxcdn.bootstrapcdn.com fonts.googleapis.com",
       "font-src": "'self' 'unsafe-inline' fonts.gstatic.com",
       "frame-src": "'self' static.ak.facebook.com s-static.ak.facebook.com https://www.facebook.com",
-      "script-src": "'self' 'unsafe-eval' localhost:35729 0.0.0.0:35729 connect.facebook.net graph.facebook.com",
+      "script-src": "'self' 'unsafe-eval' localhost:35729 0.0.0.0:35729 connect.facebook.net graph.facebook.com cdnjs.cloudflare.com",
       "img-src": "'self' https://www.facebook.com",
       "report-uri": "http://localhost:4200"
     }

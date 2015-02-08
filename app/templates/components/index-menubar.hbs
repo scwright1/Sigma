@@ -1,13 +1,11 @@
 <section id="index-navbar">
     <div class='logo'>
-        {{#link-to 'index'}}I N T R I P D{{/link-to}}
+        {{#link-to 'index'}}<img src="images/intripd-logo.png" height="24px" />I N T R I P D{{/link-to}}
     </div>
     <div class='links'>
         {{#if session.isAuthenticated}}
-            <div class='link'>
-                <a {{action 'invalidateSession' }}>Logout</a>
-            </div>
-            <div class='link'>Stephen Wright</div>
+            <a class='link' {{action 'invalidateSession' }}>LOG OUT</a>
+            {{#link-to 'me' class='user link'}}{{first-name}} {{last-name}}{{/link-to}}
         {{else}}
             {{#link-to 'auth.signup' class='link border'}}REGISTER{{/link-to}}
             {{#link-to 'auth.login' class='link'}}LOG IN{{/link-to}}

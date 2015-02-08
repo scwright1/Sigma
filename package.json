@@ -26,7 +26,6 @@
     "ember-cli-esnext": "0.1.1",
     "ember-cli-ic-ajax": "0.1.1",
     "ember-cli-inject-live-reload": "^1.3.0",
-    "ember-cli-less": "^1.1.1",
     "ember-cli-qunit": "0.1.2",
     "ember-cli-simple-auth": "^0.7.2",
     "ember-cli-simple-auth-torii": "^0.7.2",
@@ -37,7 +36,9 @@
     "http-proxy": "^1.8.1",
     "morgan": "^1.5.1",
     "rsvp-tools": "~0.1.0",
-    "torii": "^0.2.2"
+    "torii": "^0.2.2",
+    "ember-cli-less": "~1.0.5",
+    "broccoli-less-single": "^0.1.5"
   },
   "dependencies": {}
 }
