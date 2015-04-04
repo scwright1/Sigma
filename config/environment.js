@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'banbury',
+    modulePrefix: 'Sigma',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
